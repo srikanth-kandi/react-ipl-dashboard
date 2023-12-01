@@ -6,7 +6,7 @@ import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/react-ipl-dashboard/">
+    <BrowserRouter basename="/react-ipl-dashboard">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
