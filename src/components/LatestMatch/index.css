@@ -2,6 +2,7 @@
   background-color: #0f172a;
   border-radius: 10px;
   color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .latest-match-sm-container {
@@ -55,8 +56,76 @@
   margin-top: 0px;
 }
 
+.latest-match-lg-container {
+  display: none;
+}
+
+.winner-container {
+  margin-left: 10px;
+}
+
+.inning-container {
+  margin-right: 10px;
+  text-align: right;
+}
+
+.lg-match-logo {
+  margin: 10px;
+  width: 20%;
+}
+
+.lg-heading {
+  font-size: 28px;
+}
+
+.lg-fi-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lg-fi {
+  margin-top: 5px;
+}
+
+.lg-si-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lg-si {
+  margin-top: 5px;
+}
+
+.lg-motm-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lg-motm {
+  margin-top: 5px;
+}
+
+.lg-umpires-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lg-umpires {
+  margin-top: 5px;
+}
+
 @media screen and (min-width: 768px) {
   .latest-match-sm-container {
     display: none;
+  }
+  .latest-match-lg-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
   }
 }

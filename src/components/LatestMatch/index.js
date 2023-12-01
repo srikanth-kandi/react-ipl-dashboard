@@ -45,7 +45,29 @@ const LatestMatch = props => {
           <p className="sm-lower-container-umpires">Umpires - {umpires}</p>
         </div>
       </div>
-      {/* <div className="latest-match-lg-container"></div> */}
+      <div className="latest-match-lg-container">
+        <div className="winner-container">
+          <h1 className="lg-heading">{competingTeam}</h1>
+          <p className="lg-date">{date}</p>
+          <p className="lg-venue">{venue}</p>
+          <p className="lg-result">{result}</p>
+        </div>
+        <img
+          src={competingTeamLogo}
+          alt={`latest match ${competingTeam}`}
+          className="lg-match-logo"
+        />
+        <div className="inning-container">
+          <p className="lg-fi-heading">First Innings</p>
+          <p className="lg-fi">{firstInnings}</p>
+          <p className="lg-si-heading">Second Innings</p>
+          <p className="lg-si">{secondInnings}</p>
+          <p className="lg-motm-heading">Man Of The Match</p>
+          <p className="lg-motm">{manOfTheMatch}</p>
+          <p className="lg-umpires-heading">Umpires</p>
+          <p className="lg-umpires">{umpires}</p>
+        </div>
+      </div>
     </div>
   )
 }
