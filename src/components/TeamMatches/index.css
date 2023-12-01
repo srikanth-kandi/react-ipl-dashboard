@@ -83,6 +83,16 @@
   margin: 10px 0;
 }
 
+.match-cards-container {
+  padding-left: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  list-style-type: none;
+}
+
 @media screen and (min-width: 768px) {
   .team-match-container {
     width: 70%;

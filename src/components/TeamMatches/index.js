@@ -2,6 +2,7 @@ import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import LatestMatch from '../LatestMatch'
+import MatchCard from '../MatchCard'
 import './index.css'
 
 class TeamMatches extends Component {
@@ -68,7 +69,12 @@ class TeamMatches extends Component {
   }
 
   render() {
-    const {isLoading, teamBannerUrl, latestMatchDetails} = this.state
+    const {
+      isLoading,
+      teamBannerUrl,
+      latestMatchDetails,
+      recentMatches,
+    } = this.state
     const gradientClassName = this.getGradient()
     return (
       <div className={gradientClassName}>
@@ -78,9 +84,18 @@ class TeamMatches extends Component {
           </div>
         ) : (
           <div className="team-match-container">
-            <img src={teamBannerUrl} className="team-banner-img" />
+            <img
+              src={teamBannerUrl}
+              className="team-banner-img"
+              alt="team banner"
+            />
             <p className="latest-match-heading">Latest Matches</p>
             <LatestMatch latestMatchDetails={latestMatchDetails} />
+            <ul className="match-cards-container">
+              {recentMatches.map(item => (
+                <MatchCard key={item.id} matchData={item} />
+              ))}
+            </ul>
           </div>
         )}
       </div>
