@@ -1,0 +1,62 @@
+.latest-match-bg-container {
+  background-color: #0f172a;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.latest-match-sm-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sm-upper-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.sm-latest-match-logo {
+  width: 40%;
+  margin-left: 10px;
+}
+
+.sm-upper-details-container {
+  width: 60%;
+}
+
+.sm-upper-details-container-heading {
+  font-size: 18px;
+}
+
+.sm-latest-match-date {
+  font-size: 16px;
+}
+
+.sm-latest-match-venue {
+  font-size: 14px;
+}
+
+.sm-latest-match-result {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.sm-lower-container-hr {
+  width: 100%;
+  color: #475569;
+}
+
+.sm-lower-container {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.sm-lower-container-first-innings {
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .latest-match-sm-container {
+    display: none;
+  }
+}
