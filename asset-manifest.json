@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-ipl/dashboard/static/css/main.7e94757f.chunk.css",
+    "main.js": "/react-ipl/dashboard/static/js/main.c321fb77.chunk.js",
+    "main.js.map": "/react-ipl/dashboard/static/js/main.c321fb77.chunk.js.map",
+    "runtime-main.js": "/react-ipl/dashboard/static/js/runtime-main.c8178ad2.js",
+    "runtime-main.js.map": "/react-ipl/dashboard/static/js/runtime-main.c8178ad2.js.map",
+    "static/css/2.d4b4a7d5.chunk.css": "/react-ipl/dashboard/static/css/2.d4b4a7d5.chunk.css",
+    "static/js/2.4f45c556.chunk.js": "/react-ipl/dashboard/static/js/2.4f45c556.chunk.js",
+    "static/js/2.4f45c556.chunk.js.map": "/react-ipl/dashboard/static/js/2.4f45c556.chunk.js.map",
+    "index.html": "/react-ipl/dashboard/index.html",
+    "static/css/2.d4b4a7d5.chunk.css.map": "/react-ipl/dashboard/static/css/2.d4b4a7d5.chunk.css.map",
+    "static/css/main.7e94757f.chunk.css.map": "/react-ipl/dashboard/static/css/main.7e94757f.chunk.css.map",
+    "static/js/2.4f45c556.chunk.js.LICENSE.txt": "/react-ipl/dashboard/static/js/2.4f45c556.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c8178ad2.js",
+    "static/css/2.d4b4a7d5.chunk.css",
+    "static/js/2.4f45c556.chunk.js",
+    "static/css/main.7e94757f.chunk.css",
+    "static/js/main.c321fb77.chunk.js"
+  ]
+}
