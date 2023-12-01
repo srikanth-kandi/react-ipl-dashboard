@@ -1,3 +1,7 @@
+# IPL Dashboard using ReactJS ⚛
+
+Live demo - [https://srikanth-kandi.github.io/react-ipl-dashboard/](https://srikanth-kandi.github.io/react-ipl-dashboard/)
+
 In this project, let's build an **IPL Dashboard App** by applying the concepts we have learned till now.
 
 ### Refer to the image below:
