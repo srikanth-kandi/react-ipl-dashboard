@@ -1,10 +1,10 @@
 {
   "name": "ipl-dashboard-app",
-  "homepage": "https://srikanth-kandi.github.io/react-ipl-dashboard/",
+  "homepage": "/",
   "private": true,
   "version": "1.0.0",
   "engines": {
-    "node": "^10.13 || 12 || 14 || 15",
+    "node": ">=18.12",
     "npm": ">=6"
   },
   "dependencies": {

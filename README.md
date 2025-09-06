@@ -29,9 +29,83 @@ In this project, let's build an **IPL Dashboard App** by applying the concepts w
 <details>
 <summary>Click to view</summary>
 
+#### Local Development
 - Download dependencies by running `npm install`
 - Start up the app using `npm start`
+
+#### Docker Setup (Recommended)
+- **Build and run with Docker Compose:**
+  ```bash
+  docker-compose up --build
+  ```
+- **Or run with Docker directly:**
+  ```bash
+  docker run -d --name ipl-dashboard -p 3000:80 srikanthkandi/react-ipl-dashboard:latest
+  ```
+- Access the app at `http://localhost:3000`
+
+#### Production Deployment
+- **Build and push to Docker Hub:**
+  ```bash
+  # Windows
+  .\build-and-push.bat v1.0.1 srikanthkandi
+  
+  # Linux/Mac
+  ./build-and-push.sh v1.0.1 srikanthkandi
+  ```
+
+- **Deploy on Ubuntu server:**
+  ```bash
+  # Run container
+  docker run -d --name ipl-dashboard -p 3001:80 srikanthkandi/react-ipl-dashboard:latest
+  
+  # Or with docker-compose
+  docker-compose up -d
+  ```
+
+- **Configure Nginx reverse proxy** (add to your existing Nginx config):
+  ```nginx
+  location /ipl/ {
+      proxy_pass http://127.0.0.1:3001/;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection 'upgrade';
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_cache_bypass $http_upgrade;
+  }
+  ```
 </details>
+
+### Docker Files
+
+The project includes the following Docker files:
+
+- **`Dockerfile`** - Multi-stage production build with Nginx
+- **`docker-compose.yml`** - Simple orchestration for local and production
+- **`nginx.conf`** - Nginx configuration for serving the React app
+- **`build-and-push.bat`** / **`build-and-push.sh`** - Scripts to build and push to Docker Hub
+- **`run-container.bat`** / **`run-container.sh`** - Scripts to run the container easily
+- **`nginx-config-example.conf`** - Example Nginx reverse proxy configuration
+
+### Quick Commands
+
+```bash
+# Build and run locally
+docker-compose up --build
+
+# Build and push to Docker Hub
+.\build-and-push.bat v1.0.1 srikanthkandi
+
+# Run on custom port
+docker run -d --name ipl-dashboard -p 8080:80 srikanthkandi/react-ipl-dashboard:latest
+
+# Update container
+docker pull srikanthkandi/react-ipl-dashboard:latest
+docker restart ipl-dashboard
+```
 
 ### Completion Instructions
 
