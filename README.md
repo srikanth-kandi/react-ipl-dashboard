@@ -30,8 +30,8 @@ In this project, let's build an **IPL Dashboard App** by applying the concepts w
 <summary>Click to view</summary>
 
 #### Local Development
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
+- Download dependencies by running `pnpm install`
+- Start up the app using `pnpm start`
 
 #### Docker Setup (Recommended)
 - **Build and run with Docker Compose:**
@@ -90,21 +90,117 @@ The project includes the following Docker files:
 - **`run-container.bat`** / **`run-container.sh`** - Scripts to run the container easily
 - **`nginx-config-example.conf`** - Example Nginx reverse proxy configuration
 
-### Quick Commands
+### Docker Commands
 
+#### Local Development
 ```bash
-# Build and run locally
+# Build and run with Docker Compose
 docker-compose up --build
 
-# Build and push to Docker Hub
-.\build-and-push.bat v1.0.1 srikanthkandi
+# Run in background (detached mode)
+docker-compose up -d --build
+
+# Stop containers
+docker-compose down
+
+# View logs
+docker-compose logs -f
+
+# Rebuild and restart
+docker-compose up --build --force-recreate
+```
+
+#### Docker Commands (Direct)
+```bash
+# Build image locally
+docker build -t srikanthkandi/react-ipl-dashboard:latest .
+
+# Run container
+docker run -d --name ipl-dashboard -p 3000:80 srikanthkandi/react-ipl-dashboard:latest
 
 # Run on custom port
 docker run -d --name ipl-dashboard -p 8080:80 srikanthkandi/react-ipl-dashboard:latest
 
-# Update container
+# Stop container
+docker stop ipl-dashboard
+
+# Remove container
+docker rm ipl-dashboard
+
+# View logs
+docker logs ipl-dashboard
+
+# Follow logs in real-time
+docker logs -f ipl-dashboard
+
+# Execute commands inside container
+docker exec -it ipl-dashboard sh
+
+# Check container status
+docker ps
+
+# Check all containers (including stopped)
+docker ps -a
+```
+
+#### Docker Hub Operations
+```bash
+# Build and push to Docker Hub (Windows)
+.\build-and-push.bat v1.0.1 srikanthkandi
+
+# Build and push to Docker Hub (Linux/Mac)
+./build-and-push.sh v1.0.1 srikanthkandi
+
+# Login to Docker Hub
+docker login
+
+# Pull latest image
 docker pull srikanthkandi/react-ipl-dashboard:latest
+
+# Push specific tag
+docker push srikanthkandi/react-ipl-dashboard:v1.0.1
+```
+
+#### Container Management
+```bash
+# Update container to latest version
+docker pull srikanthkandi/react-ipl-dashboard:latest
+docker stop ipl-dashboard
+docker rm ipl-dashboard
+docker run -d --name ipl-dashboard -p 3000:80 srikanthkandi/react-ipl-dashboard:latest
+
+# Restart container
 docker restart ipl-dashboard
+
+# Check container health
+docker inspect ipl-dashboard
+
+# View container resource usage
+docker stats ipl-dashboard
+
+# Clean up unused images
+docker image prune -f
+
+# Clean up everything (containers, networks, images)
+docker system prune -a
+```
+
+#### Troubleshooting
+```bash
+# Check if port is in use
+netstat -tulpn | grep :3000
+
+# Test container connectivity
+curl http://localhost:3000
+
+# Check nginx configuration inside container
+docker exec ipl-dashboard nginx -t
+
+# View nginx access logs
+docker exec ipl-dashboard tail -f /var/log/nginx/access.log
+
+# View nginx error logs
+docker exec ipl-dashboard tail -f /var/log/nginx/error.log
 ```
 
 ### Completion Instructions
